@@ -3,8 +3,6 @@
 A personal operating system for Claude Code. Run the onboarding interview once, and every
 session after that already knows your goals, your projects, and how you like to work.
 
-## Why
-
 - **Stop re-explaining yourself.** One onboarding interview builds your context once. Every
   new session starts already knowing your goals, your projects, and how you like to work,
   instead of you re-typing it every time.
