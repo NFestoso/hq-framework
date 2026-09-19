@@ -1,10 +1,32 @@
-# HQ: setup
+# HQ
 
-A general-purpose Claude Code operating system: an onboarding interview that builds your own
-context files, a stable place for goals/ventures/decisions to live, and a couple of optional,
-non-accountability planning aids (daily check-ins, a weekly review, a writing-voice checklist)
-you can turn on or ignore. Your planning hub. Non-code projects live here; code projects stay in
-their own repos and report back with `/sync-hq`.
+A personal operating system for Claude Code. Run the onboarding interview once, and every
+session after that already knows your goals, your projects, and how you like to work.
+
+## Why
+
+- **Stop re-explaining yourself.** One onboarding interview builds your context once. Every
+  new session starts already knowing your goals, your projects, and how you like to work,
+  instead of you re-typing it every time.
+- **Code and everything else, one picture.** `/sync-hq` pulls each coding project's status,
+  decisions, and blockers back into one place, so you're not tracking work across a dozen repos
+  in your head.
+- **Nothing here nags you.** Daily check-ins and a weekly review are off by default. No streaks,
+  no completion tracking. Turn them on if they help, ignore them if they don't.
+- **Sounds like you, not a chatbot.** An optional writing-voice checklist catches AI-sounding
+  tells (dashes, hedging, staged contrasts) so drafts read the way you actually write.
+- **Build real specialists, not one-off prompts.** `/learn` turns videos, podcasts, and articles
+  into a sub-agent, and validates it with a blind test against plain Claude before you trust it.
+- **You own it.** Everything lives in plain markdown files in a repo you control. No proprietary
+  database, fully inspectable, free to fork and change.
+
+## What it is
+
+An onboarding interview that builds your own context files, a stable place for
+goals/ventures/decisions to live, and a couple of optional, non-accountability planning aids
+(daily check-ins, a weekly review, a writing-voice checklist) you can turn on or ignore. Your
+planning hub. Non-code projects live here; code projects stay in their own repos and report
+back with `/sync-hq`.
 Day-to-day usage: **USAGE.md**, or ask Claude "what should I run?"
 
 ## Requirements
@@ -22,9 +44,9 @@ Day-to-day usage: **USAGE.md**, or ask Claude "what should I run?"
    ```
    It installs npm packages, links the core agents plus `/sync-hq` and `/hq-help` into
    `~/.claude`, and adds `HQ_ROOT`, HQ folder access, and the sync reminder hook to your user
-   settings. Fix anything listed under "Needs attention" — a note that `GEMINI_API_KEY` isn't
+   settings. Fix anything listed under "Needs attention", a note that `GEMINI_API_KEY` isn't
    set yet is expected and fine; `/onboard` covers it if you want it.
-3. **Onboard:** `cd ~/hq && claude`, then run `/onboard` (60–90 min; do one section at a time if
+3. **Onboard:** `cd ~/hq && claude`, then run `/onboard` (60-90 min; do one section at a time if
    you like). This builds your context files, decides whether daily check-ins, weekly review,
    and the writing-voice checklist are on or off, and optionally sets up Gemini for `/learn`.
 4. **Link each code project:** open Claude Code inside the repo, confirm `/hq-help` and
@@ -36,7 +58,7 @@ That's the whole setup. Everything below is optional.
 
 ### Gemini key (only needed for `/learn`)
 Nothing else in HQ needs it. `/onboard stack` will ask and, if you say yes, save it to `.env`
-at the HQ root (gitignored — no terminal restart needed). To set it up yourself instead: get a
+at the HQ root (gitignored, no terminal restart needed). To set it up yourself instead: get a
 key at aistudio.google.com and either add `GEMINI_API_KEY=...` as a line in `~/hq/.env`, or
 export it in your shell profile (`~/.zshrc`/`~/.bashrc`, new terminal required). Test it (from
 `~/hq`, any short public YouTube video):
